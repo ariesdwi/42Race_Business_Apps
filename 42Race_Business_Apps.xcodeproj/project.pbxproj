@@ -16,6 +16,7 @@
 		84ACAD1B284AE55B00EB8961 /* _2Race_Business_AppsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD1A284AE55B00EB8961 /* _2Race_Business_AppsTests.swift */; };
 		84ACAD25284AE55B00EB8961 /* _2Race_Business_AppsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD24284AE55B00EB8961 /* _2Race_Business_AppsUITests.swift */; };
 		84ACAD27284AE55B00EB8961 /* _2Race_Business_AppsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD26284AE55B00EB8961 /* _2Race_Business_AppsUITestsLaunchTests.swift */; };
+		84ACAD4F284AE94000EB8961 /* Alamofireservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD4E284AE94000EB8961 /* Alamofireservice.swift */; };
 		DB71B90C2C931A565EB56851 /* libPods-42Race_Business_Apps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D73EB1BA4BCFF8AB8AFBDC12 /* libPods-42Race_Business_Apps.a */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		84ACAD20284AE55B00EB8961 /* 42Race_Business_AppsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 42Race_Business_AppsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ACAD24284AE55B00EB8961 /* _2Race_Business_AppsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _2Race_Business_AppsUITests.swift; sourceTree = "<group>"; };
 		84ACAD26284AE55B00EB8961 /* _2Race_Business_AppsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _2Race_Business_AppsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		84ACAD4E284AE94000EB8961 /* Alamofireservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofireservice.swift; sourceTree = "<group>"; };
 		A20B1D17F182723665076B25 /* Pods-42Race_Business_Apps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Race_Business_Apps.release.xcconfig"; path = "Target Support Files/Pods-42Race_Business_Apps/Pods-42Race_Business_Apps.release.xcconfig"; sourceTree = "<group>"; };
 		D73EB1BA4BCFF8AB8AFBDC12 /* libPods-42Race_Business_Apps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-42Race_Business_Apps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 		84ACAD02284AE55900EB8961 /* 42Race_Business_Apps */ = {
 			isa = PBXGroup;
 			children = (
+				84ACAD4D284AE92700EB8961 /* Networking */,
 				84ACAD03284AE55900EB8961 /* AppDelegate.swift */,
 				84ACAD05284AE55900EB8961 /* SceneDelegate.swift */,
 				84ACAD07284AE55900EB8961 /* ViewController.swift */,
@@ -142,13 +145,20 @@
 			path = 42Race_Business_AppsUITests;
 			sourceTree = "<group>";
 		};
+		84ACAD4D284AE92700EB8961 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				84ACAD4E284AE94000EB8961 /* Alamofireservice.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		9C2F91309647C96B66CC7E4E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				2B748503619E80302CE89755 /* Pods-42Race_Business_Apps.debug.xcconfig */,
 				A20B1D17F182723665076B25 /* Pods-42Race_Business_Apps.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -311,6 +321,7 @@
 			files = (
 				84ACAD08284AE55900EB8961 /* ViewController.swift in Sources */,
 				84ACAD04284AE55900EB8961 /* AppDelegate.swift in Sources */,
+				84ACAD4F284AE94000EB8961 /* Alamofireservice.swift in Sources */,
 				84ACAD06284AE55900EB8961 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
