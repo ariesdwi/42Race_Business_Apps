@@ -15,18 +15,13 @@ protocol AlamofireNetworkServiceInteractor: AnyObject {
 }
 
 enum AlamofireAPINetwork {
-    // LOGIN
-    case login (request: loginReq)
-    case credential (request: credReq)
-    case logout(request: logoutReq)
+    // Dashboard
+    case businessSearch
     
-    // REGISTER
-    case register(request: registerReq)
+    // Detail
+    case businessId
     
     
-    // OTP
-    case otpMatch(request: otpMatchReq)
-    case otpReq(request: otpRequest)
     
     
     // PROFILE
@@ -34,10 +29,9 @@ enum AlamofireAPINetwork {
     
     var method: HTTPMethod {
         switch self {
-        case .credential:
+
+        case .businessId , .businessSearch:
             return .get
-        case .logout ,.login ,.register ,.otpMatch , .otpReq:
-            return .post
         default:
             return .post
         }
@@ -46,25 +40,18 @@ enum AlamofireAPINetwork {
     
     private var baseURL: String {
         switch self {
-        case .login, .credential ,.logout ,.register ,.otpMatch ,.otpReq:
-            return "http://pretest-qa.dcidev.id/api/v1"
+        case .businessId , .businessSearch:
+            return "https://api.yelp.com/v3/businesses"
         }
     }
     
     private var path: String {
         switch self {
-        case .login:
-            return "/oauth/sign_in"
-        case .credential:
-            return "/oauth/credentials"
-        case .logout:
-            return "/oauth/revoke"
-        case .register:
-            return "/register"
-        case .otpMatch:
-            return "/register/otp/match"
-        case .otpReq:
-            return "/register/otp/request"
+        case .businessId :
+            return "/"
+        case  .businessSearch:
+            return "/search"
+      
         default:
             return "nil"
         }
@@ -75,18 +62,7 @@ enum AlamofireAPINetwork {
     
     var parameters: Parameters? {
         switch self {
-        case .login(let model):
-            return model.param
-        case .credential(let model):
-            return model.param
-        case .logout(let model):
-            return model.param
-        case .register( let model):
-            return model.param
-        case .otpMatch(let model):
-            return model.param
-        case .otpReq (let model):
-            return model.param
+     
         default:
             return nil
         }
@@ -133,7 +109,7 @@ final class AlamofireNetworkService {
     func populateResponse(object: AlamofireAPIData, network: AlamofireAPINetwork) {
         let generalResponse = object.generalResponse
         switch network {
-        case .login,.credential,.logout ,.register, .otpMatch , .otpReq:
+        case .businessId , .businessSearch:
                 self.interactor?.success(object, type: network)
         default:
             if generalResponse.isSuccess {
