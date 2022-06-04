@@ -24,6 +24,9 @@
 		84ACAD63284AECDE00EB8961 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD62284AECDE00EB8961 /* DashboardViewModel.swift */; };
 		84ACAD66284AECF400EB8961 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD64284AECF400EB8961 /* DashboardViewController.swift */; };
 		84ACAD67284AECF400EB8961 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ACAD65284AECF400EB8961 /* DashboardViewController.xib */; };
+		84ACAD6B284AF5AC00EB8961 /* ListBusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD69284AF5AC00EB8961 /* ListBusinessTableViewCell.swift */; };
+		84ACAD6C284AF5AC00EB8961 /* ListBusinessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ACAD6A284AF5AC00EB8961 /* ListBusinessTableViewCell.xib */; };
+		84ACAD6F284B0FD900EB8961 /* BusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD6E284B0FD900EB8961 /* BusinessModel.swift */; };
 		DB71B90C2C931A565EB56851 /* libPods-42Race_Business_Apps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D73EB1BA4BCFF8AB8AFBDC12 /* libPods-42Race_Business_Apps.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,9 @@
 		84ACAD62284AECDE00EB8961 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		84ACAD64284AECF400EB8961 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		84ACAD65284AECF400EB8961 /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
+		84ACAD69284AF5AC00EB8961 /* ListBusinessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBusinessTableViewCell.swift; sourceTree = "<group>"; };
+		84ACAD6A284AF5AC00EB8961 /* ListBusinessTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListBusinessTableViewCell.xib; sourceTree = "<group>"; };
+		84ACAD6E284B0FD900EB8961 /* BusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessModel.swift; sourceTree = "<group>"; };
 		A20B1D17F182723665076B25 /* Pods-42Race_Business_Apps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Race_Business_Apps.release.xcconfig"; path = "Target Support Files/Pods-42Race_Business_Apps/Pods-42Race_Business_Apps.release.xcconfig"; sourceTree = "<group>"; };
 		D73EB1BA4BCFF8AB8AFBDC12 /* libPods-42Race_Business_Apps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-42Race_Business_Apps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -216,6 +222,7 @@
 		84ACAD5D284AEC8400EB8961 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				84ACAD6D284B0FC400EB8961 /* Model */,
 				84ACAD62284AECDE00EB8961 /* DashboardViewModel.swift */,
 			);
 			path = ViewModel;
@@ -224,6 +231,7 @@
 		84ACAD5E284AEC8D00EB8961 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				84ACAD68284AF58A00EB8961 /* View */,
 				84ACAD64284AECF400EB8961 /* DashboardViewController.swift */,
 				84ACAD65284AECF400EB8961 /* DashboardViewController.xib */,
 			);
@@ -236,6 +244,23 @@
 				84ACAD60284AECC600EB8961 /* DashboardWireframe.swift */,
 			);
 			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		84ACAD68284AF58A00EB8961 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84ACAD69284AF5AC00EB8961 /* ListBusinessTableViewCell.swift */,
+				84ACAD6A284AF5AC00EB8961 /* ListBusinessTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84ACAD6D284B0FC400EB8961 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84ACAD6E284B0FD900EB8961 /* BusinessModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9C2F91309647C96B66CC7E4E /* Pods */ = {
@@ -356,6 +381,7 @@
 				84ACAD0D284AE55A00EB8961 /* Assets.xcassets in Resources */,
 				84ACAD0B284AE55900EB8961 /* Main.storyboard in Resources */,
 				84ACAD67284AECF400EB8961 /* DashboardViewController.xib in Resources */,
+				84ACAD6C284AF5AC00EB8961 /* ListBusinessTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ACAD5A284AEA8100EB8961 /* RequestRequirments.swift in Sources */,
+				84ACAD6B284AF5AC00EB8961 /* ListBusinessTableViewCell.swift in Sources */,
 				84ACAD08284AE55900EB8961 /* ViewController.swift in Sources */,
 				84ACAD04284AE55900EB8961 /* AppDelegate.swift in Sources */,
 				84ACAD63284AECDE00EB8961 /* DashboardViewModel.swift in Sources */,
@@ -415,6 +442,7 @@
 				84ACAD66284AECF400EB8961 /* DashboardViewController.swift in Sources */,
 				84ACAD06284AE55900EB8961 /* SceneDelegate.swift in Sources */,
 				84ACAD58284AEA0800EB8961 /* AlamofireAPIData.swift in Sources */,
+				84ACAD6F284B0FD900EB8961 /* BusinessModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,12 +10,12 @@ import Alamofire
 
 
 protocol DashboardViewModelInput {
-    func getProfile()
-    func logout()
+    func getData(terms:String)
+    func chooseDetail(id:String)
 }
 
 protocol DashboardViewModelOutput : AnyObject{
-    func showAccesToken(token:String)
+    func showData(BusinessEntity:[BusinessModel])
     func showError(message: String, completion: (() -> ())?)
 }
 
@@ -35,12 +35,12 @@ final class DashboardViewModel {
 
 
 extension DashboardViewModel:DashboardViewModelInput {
-    func logout() {
-       
+    func chooseDetail(id:String) {
+        network.request(network: .businessId(id: id))
     }
     
-    func getProfile() {
-        
+    func getData(terms:String){
+        network.request(network: .businessSearch(searchReq(term: terms, latitude: 37.786882, longitude: -122.399972)))
     }
     
    
@@ -54,15 +54,21 @@ extension DashboardViewModel: DashboardViewModelType {
 
 // MARK: NetworkServiceRequest
 private extension DashboardViewModel {
-    func requestCards(){
-        
+    func requestlist(){
+        network.request(network: .businessSearch(searchReq(term: "Starbucks", latitude: 37.786882, longitude: -122.399972)))
     }
 }
 
 // MARK: AlamofireNetworkServiceInteractor
 extension DashboardViewModel:AlamofireNetworkServiceInteractor{
     func success(_ object: AlamofireAPIData, type: AlamofireAPINetwork) {
-        
+        switch type {
+        case .businessSearch:
+            let model = object.transform([BusinessModel].self)
+            outputs?.showData(BusinessEntity: model)
+            print(model[0].name)
+        default: break
+        }
     }
     
     func failed(_ error: Error, type: AlamofireAPINetwork) {

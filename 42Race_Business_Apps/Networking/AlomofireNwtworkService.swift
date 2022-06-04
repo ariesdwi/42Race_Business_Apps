@@ -16,10 +16,10 @@ protocol AlamofireNetworkServiceInteractor: AnyObject {
 
 enum AlamofireAPINetwork {
     // Dashboard
-    case businessSearch
+    case businessSearch(searchReq)
     
     // Detail
-    case businessId
+    case businessId(id:String)
     
     
     
@@ -47,11 +47,10 @@ enum AlamofireAPINetwork {
     
     private var path: String {
         switch self {
-        case .businessId :
-            return "/"
+        case .businessId(let id) :
+            return "/\(id)"
         case  .businessSearch:
             return "/search"
-      
         default:
             return "nil"
         }
@@ -62,7 +61,8 @@ enum AlamofireAPINetwork {
     
     var parameters: Parameters? {
         switch self {
-     
+        case .businessSearch(let model):
+            return model.param
         default:
             return nil
         }
@@ -77,6 +77,19 @@ enum AlamofireAPINetwork {
     
     
     
+    
+    var header: HTTPHeaders {
+        var headers = [String:String]()
+        switch self {
+        case .businessSearch, .businessId :
+            let auth = "Bearer 0ihDjhKJMCS1w_kUJ5SI1G4eLmTCfRVe3WOghl10SAZWY50OGq_jgFptJwOk6GJeE_pFm7rGGoLY2HWQhjIpiWBAehbDZrdHahwwuBW3SCu5Z8c9EZpbk35NVNCaYnYx"
+            return [
+                "Authorization" : auth
+            ]
+        default: break
+        }
+        return HTTPHeaders(headers)
+    }
  
 }
 
@@ -90,7 +103,7 @@ final class AlamofireNetworkService {
     
     func alamofireCall(network: AlamofireAPINetwork) {
         AF.request(network.fullPath, method: network.method, parameters: network.parameters,
-                   encoding: network.parameterEncoding, headers: .default)
+                   encoding: network.parameterEncoding, headers: network.header)
             .validate()
             .responseJSON { [weak self] (response) in
                 guard let self = self else { return }

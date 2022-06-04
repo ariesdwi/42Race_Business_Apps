@@ -6,19 +6,21 @@
 //
 
 
+
+
 import UIKit
 import ObjectMapper
 
 final class AlamofireAPIData : Mappable{
     
     var generalResponse: GeneralResponse = GeneralResponse()
-    private(set) var data: Any = ""
+    private(set) var businesses: Any = ""
     convenience init?(map: Map) {
         self.init()
     }
     
     func mapping(map: Map) {
-        data <- map["data"]
+        businesses <- map["businesses"]
     }
     
 }
@@ -54,7 +56,7 @@ extension AlamofireAPIData {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         do {
-            let jsonData = try JSONSerialization.data(withJSONObject: self.data, options: .prettyPrinted)
+            let jsonData = try JSONSerialization.data(withJSONObject: self.businesses, options: .prettyPrinted)
             let model = try decoder.decode(type, from: jsonData)
             return model
         } catch {
