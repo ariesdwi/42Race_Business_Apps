@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import MapKit
 
 class DashboardViewController: UIViewController, UISearchResultsUpdating {
     
     var viewModel: DashboardViewModelType!
     var wireframe: DashboardWireframe!
     
+    let manager = CLLocationManager()
+    var currentLocation: CLLocation!
     
     // Outlet
     @IBOutlet weak var tableView: UITableView!
@@ -26,6 +29,18 @@ class DashboardViewController: UIViewController, UISearchResultsUpdating {
         setupView()
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        manager.requestWhenInUseAuthorization()
+       
+
+        if
+           CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+           CLLocationManager.authorizationStatus() ==  .authorizedAlways
+        {
+            currentLocation = manager.location
+        }
+    }
 
 
     func setupView(){
@@ -36,12 +51,16 @@ class DashboardViewController: UIViewController, UISearchResultsUpdating {
         self.tableView.register(UINib.init(nibName: "ListBusinessTableViewCell", bundle: nil), forCellReuseIdentifier: "ListBusinessTableViewCell")
     }
    
+    
+  
+    
+  
 
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {
             return
         }
-        viewModel.inputs.getData(terms: text)
+        viewModel.inputs.getData(terms: text, lat: currentLocation.coordinate.latitude, lng: currentLocation.coordinate.longitude)
     }
 }
 

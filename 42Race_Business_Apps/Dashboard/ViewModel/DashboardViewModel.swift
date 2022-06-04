@@ -7,10 +7,11 @@
 
 import Foundation
 import Alamofire
+import MapKit
 
 
 protocol DashboardViewModelInput {
-    func getData(terms:String)
+    func getData(terms:String,lat:Double,lng:Double)
     func chooseDetail(id:String)
 }
 
@@ -27,23 +28,22 @@ protocol DashboardViewModelType {
 final class DashboardViewModel {
     private let network = AlamofireNetworkService()
     weak var outputs: DashboardViewModelOutput?
-
+    var currentLocation: CLLocation!
     init() {
         network.interactor = self
+       
     }
 }
 
 
 extension DashboardViewModel:DashboardViewModelInput {
+    func getData(terms: String, lat: Double, lng: Double) {
+        network.request(network: .businessSearch(searchReq(term: terms, latitude: lat, longitude: lng)))
+    }
+    
     func chooseDetail(id:String) {
         network.request(network: .businessId(id: id))
     }
-    
-    func getData(terms:String){
-        network.request(network: .businessSearch(searchReq(term: terms, latitude: 37.786882, longitude: -122.399972)))
-    }
-    
-   
    
 }
 
