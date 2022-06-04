@@ -1,0 +1,6 @@
+module Pods_42Race_Business_Apps {
+  umbrella header "Pods-42Race_Business_Apps-umbrella.h"
+
+  export *
+  module * { export * }
+}
