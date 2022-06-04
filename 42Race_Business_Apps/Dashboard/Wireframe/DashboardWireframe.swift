@@ -22,3 +22,9 @@ final class DashboardWireframe {
         return vc
     }
 }
+extension DashboardWireframe{
+    func gotodetail(id:String) {
+        let vc = DetailWireframe().create(id: id)
+        navCon?.pushViewController(vc, animated: true)
+    }
+}

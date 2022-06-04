@@ -27,6 +27,11 @@
 		84ACAD6B284AF5AC00EB8961 /* ListBusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD69284AF5AC00EB8961 /* ListBusinessTableViewCell.swift */; };
 		84ACAD6C284AF5AC00EB8961 /* ListBusinessTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ACAD6A284AF5AC00EB8961 /* ListBusinessTableViewCell.xib */; };
 		84ACAD6F284B0FD900EB8961 /* BusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD6E284B0FD900EB8961 /* BusinessModel.swift */; };
+		84ACAD75284B277600EB8961 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD73284B277600EB8961 /* DetailViewController.swift */; };
+		84ACAD76284B277600EB8961 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ACAD74284B277600EB8961 /* DetailViewController.xib */; };
+		84ACAD78284B279100EB8961 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD77284B279100EB8961 /* DetailViewModel.swift */; };
+		84ACAD7A284B27A700EB8961 /* DetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD79284B27A700EB8961 /* DetailWireframe.swift */; };
+		84ACAD7D284B328B00EB8961 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACAD7C284B328B00EB8961 /* Extention.swift */; };
 		DB71B90C2C931A565EB56851 /* libPods-42Race_Business_Apps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D73EB1BA4BCFF8AB8AFBDC12 /* libPods-42Race_Business_Apps.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +78,11 @@
 		84ACAD69284AF5AC00EB8961 /* ListBusinessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBusinessTableViewCell.swift; sourceTree = "<group>"; };
 		84ACAD6A284AF5AC00EB8961 /* ListBusinessTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListBusinessTableViewCell.xib; sourceTree = "<group>"; };
 		84ACAD6E284B0FD900EB8961 /* BusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessModel.swift; sourceTree = "<group>"; };
+		84ACAD73284B277600EB8961 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		84ACAD74284B277600EB8961 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		84ACAD77284B279100EB8961 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		84ACAD79284B27A700EB8961 /* DetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWireframe.swift; sourceTree = "<group>"; };
+		84ACAD7C284B328B00EB8961 /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
 		A20B1D17F182723665076B25 /* Pods-42Race_Business_Apps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Race_Business_Apps.release.xcconfig"; path = "Target Support Files/Pods-42Race_Business_Apps/Pods-42Race_Business_Apps.release.xcconfig"; sourceTree = "<group>"; };
 		D73EB1BA4BCFF8AB8AFBDC12 /* libPods-42Race_Business_Apps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-42Race_Business_Apps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,6 +146,7 @@
 		84ACAD02284AE55900EB8961 /* 42Race_Business_Apps */ = {
 			isa = PBXGroup;
 			children = (
+				84ACAD7B284B327800EB8961 /* Extention */,
 				84ACAD5C284AEC6D00EB8961 /* DetailBusiness */,
 				84ACAD5B284AEC6200EB8961 /* Dashboard */,
 				84ACAD4D284AE92700EB8961 /* Networking */,
@@ -215,6 +226,9 @@
 		84ACAD5C284AEC6D00EB8961 /* DetailBusiness */ = {
 			isa = PBXGroup;
 			children = (
+				84ACAD72284B26E300EB8961 /* ViewController */,
+				84ACAD71284B26D700EB8961 /* ViewModel */,
+				84ACAD70284B26CD00EB8961 /* Wireframe */,
 			);
 			path = DetailBusiness;
 			sourceTree = "<group>";
@@ -261,6 +275,39 @@
 				84ACAD6E284B0FD900EB8961 /* BusinessModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		84ACAD70284B26CD00EB8961 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				84ACAD79284B27A700EB8961 /* DetailWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		84ACAD71284B26D700EB8961 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84ACAD77284B279100EB8961 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84ACAD72284B26E300EB8961 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84ACAD73284B277600EB8961 /* DetailViewController.swift */,
+				84ACAD74284B277600EB8961 /* DetailViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		84ACAD7B284B327800EB8961 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				84ACAD7C284B328B00EB8961 /* Extention.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 		9C2F91309647C96B66CC7E4E /* Pods */ = {
@@ -378,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ACAD10284AE55A00EB8961 /* LaunchScreen.storyboard in Resources */,
+				84ACAD76284B277600EB8961 /* DetailViewController.xib in Resources */,
 				84ACAD0D284AE55A00EB8961 /* Assets.xcassets in Resources */,
 				84ACAD0B284AE55900EB8961 /* Main.storyboard in Resources */,
 				84ACAD67284AECF400EB8961 /* DashboardViewController.xib in Resources */,
@@ -431,14 +479,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84ACAD75284B277600EB8961 /* DetailViewController.swift in Sources */,
 				84ACAD5A284AEA8100EB8961 /* RequestRequirments.swift in Sources */,
 				84ACAD6B284AF5AC00EB8961 /* ListBusinessTableViewCell.swift in Sources */,
 				84ACAD08284AE55900EB8961 /* ViewController.swift in Sources */,
 				84ACAD04284AE55900EB8961 /* AppDelegate.swift in Sources */,
 				84ACAD63284AECDE00EB8961 /* DashboardViewModel.swift in Sources */,
+				84ACAD7A284B27A700EB8961 /* DetailWireframe.swift in Sources */,
 				84ACAD56284AE9F000EB8961 /* AlamofireAPIError.swift in Sources */,
+				84ACAD7D284B328B00EB8961 /* Extention.swift in Sources */,
 				84ACAD4F284AE94000EB8961 /* AlomofireNwtworkService.swift in Sources */,
 				84ACAD61284AECC600EB8961 /* DashboardWireframe.swift in Sources */,
+				84ACAD78284B279100EB8961 /* DetailViewModel.swift in Sources */,
 				84ACAD66284AECF400EB8961 /* DashboardViewController.swift in Sources */,
 				84ACAD06284AE55900EB8961 /* SceneDelegate.swift in Sources */,
 				84ACAD58284AEA0800EB8961 /* AlamofireAPIData.swift in Sources */,

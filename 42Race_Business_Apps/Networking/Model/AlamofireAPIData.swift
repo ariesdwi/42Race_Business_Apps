@@ -14,6 +14,15 @@ import ObjectMapper
 final class AlamofireAPIData : Mappable{
     
     var generalResponse: GeneralResponse = GeneralResponse()
+    var name: String = ""
+    var rating: Double = 0.0
+    var imageUrl:String = ""
+    var location : LocationDetail =  LocationDetail()
+    var price : String = ""
+    var displayPhone: String = ""
+    var categories : [CategoryDetail]  = []
+    
+    
     private(set) var businesses: Any = ""
     convenience init?(map: Map) {
         self.init()
@@ -21,6 +30,13 @@ final class AlamofireAPIData : Mappable{
     
     func mapping(map: Map) {
         businesses <- map["businesses"]
+        name <- map["name"]
+        rating <- map["rating"]
+        imageUrl <- map["image_url"]
+        location <- map["location"]
+        price <- map["price"]
+        displayPhone <- map["display_phone"]
+        categories <- map["categories"]
     }
     
 }
@@ -66,3 +82,30 @@ extension AlamofireAPIData {
     }
 }
 
+
+//// MARK: - Location
+final class LocationDetail :Mappable{
+    var address1: String = ""
+    
+    convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        address1 <- map["address1"]
+    }
+}
+
+
+//// MARK: - Location
+final class CategoryDetail :Mappable{
+    var alias: String = ""
+    
+    convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        alias <- map["alias"]
+    }
+}

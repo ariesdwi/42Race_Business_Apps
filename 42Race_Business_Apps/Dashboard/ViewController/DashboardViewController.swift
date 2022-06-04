@@ -1,3 +1,4 @@
+
 //
 //  DashboardViewController.swift
 //  42Race_Business_Apps
@@ -68,7 +69,7 @@ extension DashboardViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.inputs.chooseDetail(id: data[indexPath.row].id)
+        wireframe.gotodetail(id: data[indexPath.row].id)
     }
 }
 

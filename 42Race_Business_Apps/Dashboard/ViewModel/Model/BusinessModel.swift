@@ -8,10 +8,6 @@
 import Foundation
 
 
-//struct SearchResponse: Decodable{
-//    var businesses: [Business]
-//}
-
 // MARK: - Business
 struct BusinessModel: Decodable {
     let name: String
@@ -25,3 +21,18 @@ struct BusinessModel: Decodable {
 struct Location :Decodable{
     let city: String
 }
+
+
+
+//// MARK: - Business
+struct BusinessDetail {
+    let name: String
+    let rating: String
+    let imageUrl:String
+    let location : String
+    let price : String
+    let displayPhone: String
+    let categories : String
+}
+
+
